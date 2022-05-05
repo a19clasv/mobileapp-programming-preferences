@@ -14,7 +14,6 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
     TextView textViewName;
     SharedPreferences preferences;
-    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
