@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
         editor = preferences.edit();
 
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button saveButton = findViewById(R.id.savingButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EditText editText = findViewById(R.id.edit_text);
@@ -36,6 +37,15 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("name", editedText);
                 editor.apply();
                 textViewName.setText(editedText);
+            }
+        });
+
+        Button switchActivityButton = findViewById(R.id.button);
+        switchActivityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
             }
         });
     }
