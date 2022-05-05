@@ -26,21 +26,8 @@ public class MainActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.name);
 
         preferences = getSharedPreferences("preferences", MODE_PRIVATE);
-        editor = preferences.edit();
 
-        Button saveButton = findViewById(R.id.savingButton);
-        saveButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                EditText editText = findViewById(R.id.edit_text);
-                String editedText = editText.getText().toString();
-                editor.putString("name", editedText);
-                editor.apply();
-                textViewName.setText(editedText);
-            }
-        });
-
-        Button switchActivityButton = findViewById(R.id.button);
+        Button switchActivityButton = findViewById(R.id.switch_button);
         switchActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
