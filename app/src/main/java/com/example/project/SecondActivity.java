@@ -30,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
                 String editedText = editText.getText().toString();
                 editor.putString("name", editedText);
                 editor.apply();
+                finish();
             }
         });
     }
